@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
     belongs_to :user
+    has_many :comments, dependent: :destroy
     validate :cannot_edit_once_published
 
 private
